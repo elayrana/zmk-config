@@ -1,0 +1,14 @@
+/*
+ * Override row-gpios for right half only:
+ * Row 3 (bottom letter row) moved from pro_micro 7 (P1.00, damaged)
+ * to pro_micro 9 (P1.04, free pin) — requires bridge wire P1.00 pad -> P1.04 pad on PCB.
+ */
+
+&kscan0 {
+    row-gpios
+        = <&pro_micro 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+        ;
+};
